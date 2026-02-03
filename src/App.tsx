@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -13,7 +13,7 @@ function App() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href')?.substring(1);
+        const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute('href')?.substring(1);
         if (targetId) {
           const targetElement = document.getElementById(targetId);
           if (targetElement) {
