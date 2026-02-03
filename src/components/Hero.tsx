@@ -19,7 +19,7 @@ const Hero = () => {
                         Available for new opportunities
                     </span>
 
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
                         Transformando problemas complexos em{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">
                             soluções escaláveis
@@ -27,7 +27,7 @@ const Hero = () => {
                         .
                     </h1>
 
-                    <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    <p className="text-base md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed px-4">
                         Especialista em unir desenvolvimento Full Stack (React/Node) com Inteligência Artificial e Cloud Computing para criar produtos digitais robustos.
                     </p>
 

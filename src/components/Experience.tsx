@@ -33,7 +33,7 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="py-20 relative">
+        <section id="experience" className="py-12 md:py-20 relative">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ const Experience = () => {
                                     className="relative pl-8 group"
                                 >
                                     {/* Timeline dot */}
-                                    <div className="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-slate-800 border-2 border-violet-500 group-hover:bg-violet-500 transition-colors" />
+                                    <div className="absolute -left-[21px] top-1.5 w-3 h-3 rounded-full bg-slate-800 border-2 border-violet-500 group-hover:bg-violet-500 transition-colors" />
 
                                     <span className="text-sm font-medium text-violet-400 mb-1 block flex items-center gap-1">
                                         <Calendar className="w-3 h-3" />

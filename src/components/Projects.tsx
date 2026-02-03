@@ -11,7 +11,7 @@ import { ExternalLink, Github, Sparkles, Server, Database, Brain } from 'lucide-
 const Projects = () => {
     // No state needed for static visual
     return (
-        <section id="projects" className="py-20 relative">
+        <section id="projects" className="py-12 md:py-20 relative">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -36,14 +36,14 @@ const Projects = () => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                    <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12 items-center">
+                    <div className="grid md:grid-cols-2 gap-8 p-6 md:p-12 items-center">
                         <div className="space-y-6">
                             <div className="flex items-center gap-2 text-violet-400 font-medium">
                                 <Sparkles className="w-4 h-4" />
                                 <span>Featured Project</span>
                             </div>
 
-                            <h3 className="text-3xl font-bold text-white">PaceX AI</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold text-white">PaceX AI</h3>
 
                             <p className="text-slate-400 leading-relaxed">
                                 Plataforma de Gestão de Treinos & IA. Aplicação Full Stack robusta para prescrição de treinos, integrando um módulo de Inteligência Artificial para suporte automatizado e insights personalizados.
