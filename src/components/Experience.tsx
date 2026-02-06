@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, Calendar, GraduationCap, Award, X } from 'lucide-react';
+import { Briefcase, Calendar, GraduationCap, Award } from 'lucide-react';
 
 const Experience = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);

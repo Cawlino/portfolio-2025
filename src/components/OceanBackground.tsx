@@ -41,7 +41,7 @@ const OceanBackground = () => {
     const [foamParticles, setFoamParticles] = useState<{ x: number, y: number, id: number }[]>([]);
     const lastPos = useRef({ x: 0, y: 0 });
     const particleCount = useRef(0);
-    const animationFrameRef = useRef<number>();
+    const animationFrameRef = useRef<number | null>(null);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
