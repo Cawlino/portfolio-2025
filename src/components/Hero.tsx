@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight, FileText, Github, Mail, MessageCircle } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -43,11 +43,39 @@ const Hero = () => {
                             href="https://www.linkedin.com/in/danielbarrionuevo"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-8 py-3.5 rounded-full bg-slate-900 border border-slate-700 hover:border-slate-600 text-slate-300 font-medium transition-all hover:bg-slate-800 w-full sm:w-auto flex items-center justify-center gap-2"
+                            className="px-8 py-3.5 rounded-full bg-slate-900 border border-slate-700 hover:border-violet-500 text-slate-300 hover:text-white font-medium transition-all hover:bg-slate-800 w-full sm:w-auto flex items-center justify-center gap-2"
                         >
                             <FileText className="w-4 h-4" />
-                            Ver LinkedIn
+                            LinkedIn
                         </a>
+
+                        <div className="flex items-center gap-3 mt-4 sm:mt-0">
+                            <a
+                                href="https://github.com/Cawlino"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-3.5 rounded-full bg-slate-900 border border-slate-700 hover:border-violet-500 text-slate-400 hover:text-white transition-all hover:bg-slate-800 hover:scale-110"
+                                title="GitHub"
+                            >
+                                <Github className="w-5 h-5" />
+                            </a>
+                            <a
+                                href="mailto:danielbgomes11@gmail.com"
+                                className="p-3.5 rounded-full bg-slate-900 border border-slate-700 hover:border-violet-500 text-slate-400 hover:text-white transition-all hover:bg-slate-800 hover:scale-110"
+                                title="Email"
+                            >
+                                <Mail className="w-5 h-5" />
+                            </a>
+                            <a
+                                href="https://wa.me/5544999063897"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-3.5 rounded-full bg-slate-900 border border-slate-700 hover:border-violet-500 text-slate-400 hover:text-white transition-all hover:bg-slate-800 hover:scale-110"
+                                title="WhatsApp"
+                            >
+                                <MessageCircle className="w-5 h-5" />
+                            </a>
+                        </div>
                     </div>
                 </motion.div>
             </div>
@@ -57,7 +85,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
+                className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
             >
                 <span className="text-xs text-slate-500 uppercase tracking-widest">Scroll</span>
                 <div className="w-px h-12 bg-gradient-to-b from-slate-500 to-transparent" />

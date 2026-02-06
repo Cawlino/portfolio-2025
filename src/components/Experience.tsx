@@ -1,7 +1,9 @@
-import { motion } from 'framer-motion';
-import { Briefcase, Calendar, GraduationCap, Award } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Briefcase, Calendar, GraduationCap, Award, X } from 'lucide-react';
 
 const Experience = () => {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const experiences = [
         {
             company: "ROQT",
@@ -22,7 +24,22 @@ const Experience = () => {
             institution: "UniCesumar",
             degree: "Engenharia de Software",
             date: "2025",
-            type: "education"
+            type: "education",
+            image: `${import.meta.env.BASE_URL}certificates/unicesumar.jpg`
+        },
+        {
+            institution: "Unova Cursos",
+            degree: "Inteligência Artificial",
+            date: "2025",
+            type: "certification",
+            image: `${import.meta.env.BASE_URL}certificates/unova_ai.jpg`
+        },
+        {
+            institution: "Data Science Academy",
+            degree: "Microsoft Power BI",
+            date: "2025",
+            type: "certification",
+            image: "https://placehold.co/600x400/7c3aed/ffffff?text=Certificado+PowerBI"
         },
         {
             institution: "AWS",
@@ -100,22 +117,72 @@ const Experience = () => {
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: idx * 0.1 }}
-                                    className="bg-slate-900/50 backdrop-blur-md border border-slate-800 p-6 rounded-xl hover:border-violet-500/30 transition-colors flex items-start gap-4"
+                                    className="bg-slate-900/50 backdrop-blur-md border border-slate-800 p-6 rounded-xl hover:border-violet-500/30 transition-colors flex flex-col sm:flex-row items-start gap-4"
                                 >
-                                    <div className="p-3 bg-slate-800 rounded-lg text-violet-400">
-                                        {edu.type === 'education' ? <GraduationCap className="w-6 h-6" /> : <Award className="w-6 h-6" />}
+                                    <div className="flex-1 flex items-start gap-4">
+                                        <div className="p-3 bg-slate-800 rounded-lg text-violet-400 shrink-0">
+                                            {edu.type === 'education' ? <GraduationCap className="w-6 h-6" /> : <Award className="w-6 h-6" />}
+                                        </div>
+                                        <div>
+                                            <h4 className="text-white font-bold">{edu.degree}</h4>
+                                            <p className="text-slate-400">{edu.institution}</p>
+                                            <p className="text-slate-500 text-sm mt-1">{edu.date}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="text-white font-bold">{edu.degree}</h4>
-                                        <p className="text-slate-400">{edu.institution}</p>
-                                        <p className="text-slate-500 text-sm mt-1">{edu.date}</p>
-                                    </div>
+
+                                    {edu.image && (
+                                        <div className="w-full sm:w-32 shrink-0">
+                                            <div
+                                                className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-700 hover:border-violet-500 transition-colors cursor-pointer group/img relative"
+                                                onMouseEnter={() => setSelectedImage(edu.image)}
+                                                onMouseLeave={() => setSelectedImage(null)}
+                                            >
+                                                <img
+                                                    src={edu.image}
+                                                    alt={edu.degree}
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110"
+                                                />
+                                                <div className="absolute inset-0 bg-violet-500/0 group-hover/img:bg-violet-500/10 transition-colors flex items-center justify-center">
+                                                    <div className="opacity-0 group-hover/img:opacity-100 transform scale-90 group-hover/img:scale-100 transition-all bg-slate-900/80 p-1.5 rounded-full backdrop-blur-sm">
+                                                        <Award className="w-4 h-4 text-violet-400" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </div>
             </div>
+            {/* Certificate Modal */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm pointer-events-none"
+                    >
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0, y: 10 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.8, opacity: 0, y: 10 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="relative w-auto max-w-[90vw] max-h-[90vh] bg-slate-900/90 rounded-2xl overflow-hidden shadow-2xl border border-violet-500/30 flex flex-col p-2"
+                        >
+                            <div className="overflow-hidden rounded-xl flex items-center justify-center bg-black/50 h-full w-full">
+                                <img
+                                    src={selectedImage}
+                                    alt="Certificate Full View"
+                                    className="max-w-full max-h-[85vh] w-auto h-auto object-contain shadow-2xl"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
