@@ -41,9 +41,12 @@ const OceanBackground = () => {
     const [foamParticles, setFoamParticles] = useState<{ x: number, y: number, id: number }[]>([]);
     const lastPos = useRef({ x: 0, y: 0 });
     const particleCount = useRef(0);
+    const animationFrameRef = useRef<number>();
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
+            // Use requestAnimationFrame to throttle state updates slightly if needed,
+            // but for mouse movement spring sources, simply updating the motion value is usually fine.
             mouseX.set(e.clientX);
             mouseY.set(e.clientY);
 
@@ -52,16 +55,15 @@ const OceanBackground = () => {
             const dy = e.clientY - lastPos.current.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            // Spawn foam more frequently (every 25px) for a smoother trail
-            if (distance > 25) {
-                // Spawn a burst of tiny particles occasionally? 
-                // For now, simpler foam blobs works best for performance.
+            // Optimization: Increased distance threshold from 25 to 50 to reduce particle count
+            if (distance > 50) {
                 const newId = particleCount.current++;
                 const newParticle = { x: e.clientX, y: e.clientY, id: newId };
 
                 setFoamParticles(prev => {
                     const updated = [...prev, newParticle];
-                    if (updated.length > 25) return updated.slice(updated.length - 25);
+                    // Optimization: Cap max particles to 12 instead of 25
+                    if (updated.length > 12) return updated.slice(updated.length - 12);
                     return updated;
                 });
 
@@ -69,27 +71,44 @@ const OceanBackground = () => {
 
                 // Auto-cleanup
                 setTimeout(() => {
+                    // Functional update to avoid closure staleness, but we need to be careful about re-renders.
                     setFoamParticles(prev => prev.filter(p => p.id !== newId));
-                }, 1200);
+                }, 1000); // Slightly shorter life
             }
         };
 
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
+        const onMove = (e: MouseEvent) => {
+            if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
+            animationFrameRef.current = requestAnimationFrame(() => handleMouseMove(e));
+        };
+
+        window.addEventListener('mousemove', onMove);
+        return () => {
+            window.removeEventListener('mousemove', onMove);
+            if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
+        };
     }, [mouseX, mouseY]);
 
     return (
-        <div className="fixed inset-0 z-0 overflow-hidden bg-slate-950 pointer-events-none">
+        <div className="fixed inset-0 z-0 overflow-hidden bg-slate-950 pointer-events-none transform-gpu">
             {/* Deep Ocean Base */}
             <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-[#0f172a] to-blue-950/40" />
 
-            {/* Ambient Currents */}
+            {/* Ambient Currents - Reduced blur radii for performance and used opacity animation instead of CSS pulse */}
             <motion.div
                 style={{ x: x1, y: y1 }}
-                className="absolute inset-0 opacity-50 mix-blend-screen"
+                className="absolute inset-0 size-full opacity-50 mix-blend-screen will-change-transform"
             >
-                <div className="absolute top-[10%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-violet-900/10 blur-[100px] animate-pulse" />
-                <div className="absolute bottom-[20%] right-[20%] w-[50vw] h-[50vw] rounded-full bg-cyan-900/10 blur-[120px]" />
+                <motion.div
+                    animate={{ opacity: [0.4, 0.7, 0.4] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-[10%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-violet-900/10 blur-[80px]"
+                />
+                <motion.div
+                    animate={{ opacity: [0.3, 0.6, 0.3] }}
+                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    className="absolute bottom-[20%] right-[20%] w-[50vw] h-[50vw] rounded-full bg-cyan-900/10 blur-[90px]"
+                />
             </motion.div>
 
             {/* The Foam Trail */}
@@ -102,7 +121,7 @@ const OceanBackground = () => {
             {/* Subtle light follow */}
             <motion.div
                 style={{ x, y }}
-                className="absolute w-[200px] h-[200px] bg-cyan-400/5 blur-[80px] rounded-full -translate-x-1/2 -translate-y-1/2 mix-blend-screen"
+                className="absolute w-[150px] h-[150px] bg-cyan-400/5 blur-[50px] rounded-full -translate-x-1/2 -translate-y-1/2 mix-blend-screen will-change-transform"
             />
 
             {/* Texture */}

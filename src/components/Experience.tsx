@@ -136,6 +136,7 @@ const Experience = () => {
                                                 className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-700 hover:border-violet-500 transition-colors cursor-pointer group/img relative"
                                                 onMouseEnter={() => setSelectedImage(edu.image)}
                                                 onMouseLeave={() => setSelectedImage(null)}
+                                                onClick={() => setSelectedImage(edu.image)}
                                             >
                                                 <img
                                                     src={edu.image}

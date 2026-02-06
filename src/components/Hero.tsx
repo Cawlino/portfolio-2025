@@ -19,7 +19,7 @@ const Hero = () => {
                         Available for new opportunities
                     </span>
 
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
+                    <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
                         Transformando problemas complexos em{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">
                             soluções escaláveis
