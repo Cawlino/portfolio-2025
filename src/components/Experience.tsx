@@ -36,16 +36,10 @@ const Experience = () => {
         },
         {
             institution: "Data Science Academy",
-            degree: "Microsoft Power BI",
+            degree: "Microsoft Power BI Para Business Intelligence e Data Science",
             date: "2025",
             type: "certification",
-            image: "https://placehold.co/600x400/7c3aed/ffffff?text=Certificado+PowerBI"
-        },
-        {
-            institution: "AWS",
-            degree: "Certified AI Practitioner (AIFC-01)",
-            date: "2025",
-            type: "certification"
+            image: `${import.meta.env.BASE_URL}certificates/power_bi.jpg`
         }
     ];
 
