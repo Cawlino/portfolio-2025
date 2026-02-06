@@ -4,6 +4,8 @@ import { Briefcase, Calendar, GraduationCap, Award, X } from 'lucide-react';
 
 const Experience = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [isLocked, setIsLocked] = useState(false);
+
     const experiences = [
         {
             company: "ROQT",
@@ -42,6 +44,24 @@ const Experience = () => {
             image: `${import.meta.env.BASE_URL}certificates/power_bi.jpg`
         }
     ];
+
+    const handleMouseEnter = (img: string) => {
+        if (!isLocked) setSelectedImage(img);
+    };
+
+    const handleMouseLeave = () => {
+        if (!isLocked) setSelectedImage(null);
+    };
+
+    const handleClick = (img: string) => {
+        setSelectedImage(img);
+        setIsLocked(true);
+    };
+
+    const handleClose = () => {
+        setSelectedImage(null);
+        setIsLocked(false);
+    };
 
     return (
         <section id="experience" className="py-12 md:py-20 relative">
@@ -128,9 +148,9 @@ const Experience = () => {
                                         <div className="w-full sm:w-32 shrink-0">
                                             <div
                                                 className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-700 hover:border-violet-500 transition-colors cursor-pointer group/img relative bg-slate-800"
-                                                onMouseEnter={() => setSelectedImage(edu.image)}
-                                                onMouseLeave={() => setSelectedImage(null)}
-                                                onClick={() => setSelectedImage(edu.image)}
+                                                onMouseEnter={() => handleMouseEnter(edu.image)}
+                                                onMouseLeave={handleMouseLeave}
+                                                onClick={() => handleClick(edu.image)}
                                             >
                                                 <img
                                                     src={edu.image}
@@ -159,24 +179,27 @@ const Experience = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={() => setSelectedImage(null)}
-                        className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm cursor-pointer"
+                        onClick={handleClose}
+                        className={`fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm transition-all ${isLocked ? 'pointer-events-auto cursor-pointer' : 'pointer-events-none'
+                            }`}
                     >
                         <motion.div
                             initial={{ scale: 0.8, opacity: 0, y: 10 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.8, opacity: 0, y: 10 }}
-                            onClick={(e) => e.stopPropagation()}
+                            onClick={(e) => isLocked && e.stopPropagation()}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
                             className="relative w-auto max-w-[90vw] max-h-[90vh] bg-slate-900/90 rounded-2xl overflow-hidden shadow-2xl border border-violet-500/30 flex flex-col p-2 cursor-auto"
                         >
-                            {/* Close Button */}
-                            <button
-                                onClick={() => setSelectedImage(null)}
-                                className="absolute top-2 right-2 z-50 p-2 bg-black/50 text-white rounded-full hover:bg-violet-500 transition-colors"
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
+                            {/* Close Button - Only visible/clickable when locked */}
+                            {isLocked && (
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); handleClose(); }}
+                                    className="absolute top-2 right-2 z-50 p-2 bg-black/50 text-white rounded-full hover:bg-violet-500 transition-colors"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+                            )}
 
                             <div className="overflow-hidden rounded-xl flex items-center justify-center bg-black/50 h-full w-full">
                                 <img
