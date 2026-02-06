@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, Calendar, GraduationCap, Award } from 'lucide-react';
+import { Briefcase, Calendar, GraduationCap, Award, X } from 'lucide-react';
 
 const Experience = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -127,7 +127,7 @@ const Experience = () => {
                                     {edu.image && (
                                         <div className="w-full sm:w-32 shrink-0">
                                             <div
-                                                className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-700 hover:border-violet-500 transition-colors cursor-pointer group/img relative"
+                                                className="aspect-[4/3] rounded-lg overflow-hidden border border-slate-700 hover:border-violet-500 transition-colors cursor-pointer group/img relative bg-slate-800"
                                                 onMouseEnter={() => setSelectedImage(edu.image)}
                                                 onMouseLeave={() => setSelectedImage(null)}
                                                 onClick={() => setSelectedImage(edu.image)}
@@ -135,6 +135,7 @@ const Experience = () => {
                                                 <img
                                                     src={edu.image}
                                                     alt={edu.degree}
+                                                    loading="lazy"
                                                     className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110"
                                                 />
                                                 <div className="absolute inset-0 bg-violet-500/0 group-hover/img:bg-violet-500/10 transition-colors flex items-center justify-center">
@@ -158,15 +159,25 @@ const Experience = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm pointer-events-none"
+                        onClick={() => setSelectedImage(null)}
+                        className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm cursor-pointer"
                     >
                         <motion.div
                             initial={{ scale: 0.8, opacity: 0, y: 10 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.8, opacity: 0, y: 10 }}
+                            onClick={(e) => e.stopPropagation()}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="relative w-auto max-w-[90vw] max-h-[90vh] bg-slate-900/90 rounded-2xl overflow-hidden shadow-2xl border border-violet-500/30 flex flex-col p-2"
+                            className="relative w-auto max-w-[90vw] max-h-[90vh] bg-slate-900/90 rounded-2xl overflow-hidden shadow-2xl border border-violet-500/30 flex flex-col p-2 cursor-auto"
                         >
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setSelectedImage(null)}
+                                className="absolute top-2 right-2 z-50 p-2 bg-black/50 text-white rounded-full hover:bg-violet-500 transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
                             <div className="overflow-hidden rounded-xl flex items-center justify-center bg-black/50 h-full w-full">
                                 <img
                                     src={selectedImage}
