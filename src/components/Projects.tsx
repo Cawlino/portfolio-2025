@@ -78,29 +78,53 @@ const Projects = () => {
                                 </div>
                             </div>
 
-                            {/* Real Project Preview - Video */}
-                            <div className="relative h-64 md:h-full min-h-[400px] bg-slate-950 rounded-xl border border-slate-800 overflow-hidden group-hover:border-violet-500/30 transition-colors flex items-center justify-center">
-                                <video 
-                                    src={`${import.meta.env.BASE_URL}videoTelaPaceX.mp4`} 
-                                    autoPlay 
-                                    loop 
-                                    muted 
-                                    playsInline
-                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                                />
-                                
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
+                            {/* Premium Project Preview - Responsive Browser Mockup */}
+                            <motion.div 
+                                className="relative md:h-full flex items-center justify-center p-2 md:p-4"
+                                whileHover={{ scale: 1.02, rotateX: 2, rotateY: -2 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                style={{ perspective: 1000 }}
+                            >
+                                <div className="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-violet-500/10 group-hover:border-violet-500/30 transition-colors">
+                                    {/* Browser Header Layout */}
+                                    <div className="absolute top-0 left-0 right-0 h-8 bg-slate-800/80 backdrop-blur-md flex items-center px-4 gap-1.5 border-b border-white/5 z-10">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                                        <div className="mx-auto flex items-center gap-1.5 px-3 py-1 bg-slate-900/50 rounded-md border border-white/5">
+                                            <div className="w-2 h-2 rounded-full bg-violet-500/50" />
+                                            <span className="text-[10px] text-slate-400 font-mono tracking-wider">pacexai.com</span>
+                                        </div>
+                                    </div>
 
-                                {/* Floating indicator or overlay if needed */}
-                                <div className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-lg text-xs text-slate-300 font-mono">
-                                    <div className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-                                    Live Preview Active
+                                    {/* Video Content */}
+                                    <div className="pt-8 h-full bg-slate-950 flex items-center justify-center overflow-hidden">
+                                        <video 
+                                            src={`${import.meta.env.BASE_URL}videoTelaPaceX.mp4`} 
+                                            autoPlay 
+                                            loop 
+                                            muted 
+                                            playsInline
+                                            className="w-full h-full object-contain md:object-cover scale-[1.01]" 
+                                        />
+                                        
+                                        {/* Dynamic overlays */}
+                                        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-950 to-transparent opacity-60 pointer-events-none" />
+                                        
+                                        <div className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-lg text-xs text-slate-300 font-mono z-20">
+                                            <div className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
+                                            Live Demo
+                                        </div>
+                                    </div>
+
+                                    {/* Glass reflection effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent opacity-30 pointer-events-none" />
                                 </div>
 
-                                {/* Background decorative elements */}
-                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-violet-600/20 rounded-full blur-3xl pointer-events-none" />
-                                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
-                            </div>
+                                {/* Background decorative elements - Enhanced for depth */}
+                                <div className="absolute -top-12 -right-12 w-48 h-48 bg-violet-600/10 rounded-full blur-3xl pointer-events-none group-hover:bg-violet-600/20 transition-colors" />
+                                <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none group-hover:bg-indigo-600/20 transition-colors" />
+                            </motion.div>
                         </div>
                     </motion.div>
 
