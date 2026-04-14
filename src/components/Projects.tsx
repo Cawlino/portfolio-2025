@@ -78,52 +78,23 @@ const Projects = () => {
                                 </div>
                             </div>
 
-                            {/* Abstract Visual - Code Snippet */}
-                            <div className="relative h-64 md:h-full min-h-[300px] bg-slate-950 rounded-xl border border-slate-800 overflow-hidden group-hover:border-violet-500/30 transition-colors flex items-center justify-center">
-                                <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/5 via-transparent to-indigo-500/5" />
+                            {/* Real Project Preview - Video */}
+                            <div className="relative h-64 md:h-full min-h-[400px] bg-slate-950 rounded-xl border border-slate-800 overflow-hidden group-hover:border-violet-500/30 transition-colors flex items-center justify-center">
+                                <video 
+                                    src="/videoTelaPaceX.mp4" 
+                                    autoPlay 
+                                    loop 
+                                    muted 
+                                    playsInline
+                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                                />
+                                
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
 
-                                {/* Floating Code Card */}
-                                <div className="relative w-full max-w-[320px] bg-slate-900/90 backdrop-blur border border-slate-800 rounded-lg p-5 shadow-2xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500">
-                                    <div className="flex gap-1.5 mb-4">
-                                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                                    </div>
-                                    <div className="space-y-2.5 font-mono text-xs">
-                                        <div className="flex">
-                                            <span className="text-violet-400 mr-2">const</span>
-                                            <span className="text-blue-400">PaceX</span>
-                                            <span className="text-slate-500 mx-2">=</span>
-                                            <span className="text-yellow-300">async</span>
-                                            <span className="text-slate-300">()</span>
-                                            <span className="text-slate-500 mx-2">=&gt;</span>
-                                            <span className="text-slate-300">{`{`}</span>
-                                        </div>
-                                        <div className="pl-4">
-                                            <span className="text-violet-400">await</span>
-                                            <span className="text-blue-300 ml-2">trainAIModel</span>
-                                            <span className="text-slate-300">({`{`}</span>
-                                        </div>
-                                        <div className="pl-8">
-                                            <span className="text-slate-400">accuracy:</span>
-                                            <span className="text-green-400 ml-2">99.9%</span>
-                                            <span className="text-slate-500">,</span>
-                                        </div>
-                                        <div className="pl-8">
-                                            <span className="text-slate-400">mode:</span>
-                                            <span className="text-orange-300 ml-2">'pro-athlete'</span>
-                                        </div>
-                                        <div className="pl-4">
-                                            <span className="text-slate-300">{`}`});</span>
-                                        </div>
-                                        <div className="pl-4 text-slate-500">// AI Personalized Workouts</div>
-                                        <div className="pl-4">
-                                            <span className="text-violet-400">return</span>
-                                            <span className="text-blue-300 ml-2">performance</span>
-                                            <span className="text-slate-300">;</span>
-                                        </div>
-                                        <div><span className="text-slate-300">{`}`}</span></div>
-                                    </div>
+                                {/* Floating indicator or overlay if needed */}
+                                <div className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-lg text-xs text-slate-300 font-mono">
+                                    <div className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
+                                    Live Preview Active
                                 </div>
 
                                 {/* Background decorative elements */}
