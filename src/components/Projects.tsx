@@ -81,7 +81,7 @@ const Projects = () => {
                             {/* Real Project Preview - Video */}
                             <div className="relative h-64 md:h-full min-h-[400px] bg-slate-950 rounded-xl border border-slate-800 overflow-hidden group-hover:border-violet-500/30 transition-colors flex items-center justify-center">
                                 <video 
-                                    src="/videoTelaPaceX.mp4" 
+                                    src={`${import.meta.env.BASE_URL}videoTelaPaceX.mp4`} 
                                     autoPlay 
                                     loop 
                                     muted 
