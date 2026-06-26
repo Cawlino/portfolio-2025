@@ -4,24 +4,24 @@ import { Server, Cloud, Database, Layout } from 'lucide-react';
 const Skills = () => {
     const skillCategories = [
         {
-            title: "Frontend Development",
+            title: "Frontend & Mobile App",
             icon: Layout,
-            skills: ["React.js", "TypeScript", "Tailwind CSS", "Figma", "Framer Motion", "Vite"]
+            skills: ["React Native", "React.js", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion", "Vite", "Expo"]
         },
         {
-            title: "Backend Engineering",
+            title: "Backend & Database",
             icon: Server,
-            skills: ["Node.js", "Express", "REST APIs", "JWT", "Microservices"]
+            skills: ["Node.js", "Express", "Supabase", "PostgreSQL", "REST APIs", "JWT", "Microservices"]
         },
         {
-            title: "Cloud & AI",
+            title: "Cloud & AI Engineering",
             icon: Cloud,
-            skills: ["AWS CloudFormation", "Python", "AI Fundamentals", "LLM Integration", "AWS Certified AI Practitioner"]
+            skills: ["AWS CloudFormation", "Python", "Gemini AI", "LLM Integration", "AI Agents", "AWS Certified AI Practitioner"]
         },
         {
-            title: "Data & Analytics",
+            title: "Data Science & BI",
             icon: Database,
-            skills: ["SQL", "Power BI", "ETL Pipelines", "Data Modeling"]
+            skills: ["SQL", "Power BI", "ETL Pipelines", "Data Modeling", "Python Analytics"]
         }
     ];
 

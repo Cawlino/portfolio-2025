@@ -8,6 +8,12 @@ const Experience = () => {
 
     const experiences = [
         {
+            company: "PaceX AI & Freelance",
+            role: "Desenvolvedor Full Stack & Mobile",
+            date: "2025 - Presente",
+            description: "Arquitetura e desenvolvimento de aplicações web escaláveis (React.js, Node.js, AWS) e aplicativos móveis nativos (React Native) para plataformas de treino e gamificação educacional integradas com Inteligência Artificial.",
+        },
+        {
             company: "ROQT",
             role: "Analista de Dados & BI",
             date: "2025 - 2025",
