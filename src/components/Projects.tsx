@@ -27,7 +27,6 @@ const PhoneMockup = ({ src, alt, label }: PhoneMockupProps) => (
                     </div>
                     <div>
                         <p className="text-xs font-semibold text-slate-200">{label}</p>
-                        <p className="text-[10px] text-slate-400 font-mono mt-1">Tela Samsung S24</p>
                     </div>
                     <span className="inline-block px-3 py-1 bg-slate-800/90 text-violet-300 rounded-full text-[10px] border border-slate-700 font-mono">
                         Pronto para o print...
@@ -205,7 +204,7 @@ const Projects = () => {
                                 <div className="grid grid-cols-2 gap-4 py-4">
                                     <div className="flex items-center gap-2 text-slate-300">
                                         <Smartphone className="w-4 h-4 text-indigo-500" />
-                                        <span className="text-sm">Performance Nativa (S24)</span>
+                                        <span className="text-sm">Performance Nativa Fluida</span>
                                     </div>
                                     <div className="flex items-center gap-2 text-slate-300">
                                         <Brain className="w-4 h-4 text-violet-500" />
@@ -273,18 +272,14 @@ const Projects = () => {
                                     </div>
                                     <div className="flex items-center gap-2 text-slate-300">
                                         <Smartphone className="w-4 h-4 text-violet-500" />
-                                        <span className="text-sm">Experiência Mobile (S24)</span>
+                                        <span className="text-sm">Interface Mobile Nativa</span>
                                     </div>
                                 </div>
 
                                 <div className="flex gap-4 pt-2 relative z-20">
                                     <a href="https://adventista-play.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 bg-violet-600 hover:bg-violet-500 text-white rounded-lg transition-colors font-medium">
                                         <ExternalLink className="w-4 h-4" />
-                                        Preview
-                                    </a>
-                                    <a href="https://github.com/Cawlino/DuolingoBiblico" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors font-medium border border-slate-700">
-                                        <Github className="w-4 h-4" />
-                                        Code
+                                        Testar App
                                     </a>
                                 </div>
                             </div>
