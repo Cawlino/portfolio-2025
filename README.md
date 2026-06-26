@@ -1,4 +1,4 @@
-# Portfolio Profissional 2025
+# Portfolio Profissional 2026
 
 Este é o repositório oficial do meu Portfolio Profissional, desenvolvido com tecnologias modernas para demosntrar minhas habilidades em desenvolvimento Full Stack e UI/UX.
 

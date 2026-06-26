@@ -1,9 +1,9 @@
 {
-  "name": "portfolio-2025",
+  "name": "portfolio-2026",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Cawlino.github.io/portfolio-2025",
+  "homepage": "https://Cawlino.github.io/portfolio-2026",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
