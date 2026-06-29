@@ -441,20 +441,20 @@ const Projects = () => {
                                         </div>
                                     </div>
 
-                                    <div className="flex-1 bg-slate-950 p-6 flex flex-col justify-between overflow-hidden relative">
+                                    <div className="flex-1 bg-slate-950 p-3 sm:p-6 flex flex-col justify-between overflow-hidden relative">
                                         {/* Decorative dashboard visual elements */}
-                                        <div className="grid grid-cols-3 gap-3 mb-4 z-10">
-                                            <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
-                                                <div className="text-[10px] text-slate-400 font-mono">Receita Total</div>
-                                                <div className="text-sm font-bold text-emerald-400 mt-1">+ R$ 124.500</div>
+                                        <div className="grid grid-cols-3 gap-1.5 sm:gap-3 mb-2 sm:mb-4 z-10">
+                                            <div className="p-2 sm:p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                                                <div className="text-[8px] sm:text-[10px] text-slate-400 font-mono truncate">Receita</div>
+                                                <div className="text-xs sm:text-sm font-bold text-emerald-400 mt-0.5 sm:mt-1 truncate">+ R$ 124.5k</div>
                                             </div>
-                                            <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
-                                                <div className="text-[10px] text-slate-400 font-mono">Crescimento (KPI)</div>
-                                                <div className="text-sm font-bold text-indigo-400 mt-1">28.4% ↗</div>
+                                            <div className="p-2 sm:p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                                                <div className="text-[8px] sm:text-[10px] text-slate-400 font-mono truncate">Crescimento</div>
+                                                <div className="text-xs sm:text-sm font-bold text-indigo-400 mt-0.5 sm:mt-1 truncate">28.4% ↗</div>
                                             </div>
-                                            <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
-                                                <div className="text-[10px] text-slate-400 font-mono">Transações</div>
-                                                <div className="text-sm font-bold text-violet-400 mt-1">1.482</div>
+                                            <div className="p-2 sm:p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                                                <div className="text-[8px] sm:text-[10px] text-slate-400 font-mono truncate">Transações</div>
+                                                <div className="text-xs sm:text-sm font-bold text-violet-400 mt-0.5 sm:mt-1 truncate">1.482</div>
                                             </div>
                                         </div>
 
