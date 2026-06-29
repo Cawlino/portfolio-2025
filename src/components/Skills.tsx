@@ -6,22 +6,22 @@ const Skills = () => {
         {
             title: "Frontend & Mobile App",
             icon: Layout,
-            skills: ["React Native", "React.js", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion", "Vite", "Expo"]
+            skills: ["React 19", "React Native", "Next.js", "TypeScript", "TanStack Router", "Tailwind CSS", "Expo", "Framer Motion"]
         },
         {
             title: "Backend & Database",
             icon: Server,
-            skills: ["Node.js", "Express", "Supabase", "PostgreSQL", "REST APIs", "JWT", "Microservices"]
+            skills: ["Node.js", "Python / Django", "PostgreSQL", "Drizzle ORM", "Supabase", "Docker", "REST APIs", "Stripe / AbacatePay"]
         },
         {
             title: "Cloud & AI Engineering",
             icon: Cloud,
-            skills: ["AWS CloudFormation", "Python", "Gemini AI", "LLM Integration", "AI Agents", "AWS Certified AI Practitioner"]
+            skills: ["Function Calling", "Gemini AI", "Grok AI", "OpenRouter", "AI Agents", "AWS Cloud", "Docker"]
         },
         {
             title: "Data Science & BI",
             icon: Database,
-            skills: ["SQL", "Power BI", "ETL Pipelines", "Data Modeling", "Python Analytics"]
+            skills: ["Power BI", "DAX", "Power Query", "SQL", "ETL Pipelines", "Python Analytics"]
         }
     ];
 

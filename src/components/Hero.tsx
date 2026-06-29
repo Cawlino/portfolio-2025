@@ -16,7 +16,7 @@ const Hero = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <span className="inline-block py-1 px-3 rounded-full bg-slate-900/50 border border-slate-800 text-violet-400 text-sm font-medium mb-6 backdrop-blur-sm">
-                        Available for new opportunities
+                        Tech Lead & Engenharia de Software Full Stack
                     </span>
 
                     <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
@@ -28,7 +28,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-base md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed px-4">
-                        Especialista em unir desenvolvimento Full Stack (React/Node) com Inteligência Artificial e Cloud Computing para criar produtos digitais robustos.
+                        Aplicando expertise consolidada na concepção e liderança de ponta a ponta de plataformas completas, alinhando interfaces dinâmicas (React/Next.js), arquiteturas backend robustas e Inteligência Artificial com metodologias ágeis.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

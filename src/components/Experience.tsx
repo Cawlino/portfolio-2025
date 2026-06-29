@@ -9,38 +9,60 @@ const Experience = () => {
     const experiences = [
         {
             company: "PaceX AI & Freelance",
-            role: "Desenvolvedor Full Stack & Mobile",
+            role: "Tech Lead & Engenheiro de Software Full Stack",
             date: "2025 - Presente",
-            description: "Arquitetura e desenvolvimento de aplicações web escaláveis (React.js, Node.js, AWS) e aplicativos móveis nativos (React Native) para plataformas de treino e gamificação educacional integradas com Inteligência Artificial.",
+            description: [
+                "Liderança de produto e desenvolvimento de ponta a ponta de plataformas completas em React/Next.js, Node.js e React Native.",
+                "Implementação e integração de motores de IA (Gemini, OpenRouter) com foco em escalabilidade e interfaces dinâmicas.",
+                "Arquiteturas backend robustas baseadas em PostgreSQL, Docker e integração de gateways de pagamento."
+            ],
         },
         {
-            company: "ROQT",
-            role: "Analista de Dados & BI",
-            date: "2025 - 2025",
-            description: "Desenvolvimento de dashboards estratégicos em Power BI e implementação de pipelines ETL eficientes com Python e SQL para análise de dados.",
+            company: "ROQT | Data & AI",
+            role: "Analista de Dados / BI",
+            date: "Jun 2025 - Ago 2025",
+            description: [
+                "Desenvolvimento e manutenção de dashboards interativos no Power BI com modelagem em DAX e Power Query.",
+                "Criação de pipelines de dados e ETL utilizando SQL e Python para integração de múltiplas fontes.",
+                "Geração de relatórios automatizados, análises preditivas e insights estratégicos em squads ágeis."
+            ],
         },
         {
             company: "Ired Internet",
-            role: "Suporte Técnico N2",
-            date: "2023 - 2025",
-            description: "Diagnóstico avançado de redes e resolução de incidentes críticos. Desenvolvimento rigoroso de capacidade analítica e troubleshooting.",
+            role: "Suporte Técnico N2 e Estágio",
+            date: "Nov 2023 - Jun 2025",
+            description: [
+                "Diagnóstico e resolução de incidentes complexos de conectividade e redes, desenvolvendo forte capacidade analítica.",
+                "Atendimento direto para mitigação de lentidões em demandas de serviços financeiros e administrativos."
+            ],
         }
     ];
 
     const education = [
         {
             institution: "UniCesumar",
-            degree: "Engenharia de Software",
-            date: "2025",
+            degree: "Bacharelado em Engenharia de Software",
+            date: "Jan 2022 - Dez 2026",
             type: "education",
             image: `${import.meta.env.BASE_URL}certificates/unicesumar.jpg`
         },
         {
-            institution: "Unova Cursos",
-            degree: "Inteligência Artificial",
+            institution: "UniCesumar",
+            degree: "Master of Business Administration (MBA)",
+            date: "Em andamento",
+            type: "education"
+        },
+        {
+            institution: "Udemy Alumni",
+            degree: "Técnico em TI (Integrado em Tecnologia da Informação)",
+            date: "Dez 2025 - Jan 2026",
+            type: "certification"
+        },
+        {
+            institution: "Udemy",
+            degree: "Desenvolvimento Full Stack (The Complete Full-Stack Web Development Bootcamp)",
             date: "2025",
-            type: "certification",
-            image: `${import.meta.env.BASE_URL}certificates/unova_ai.jpg`
+            type: "certification"
         },
         {
             institution: "Data Science Academy",
@@ -114,9 +136,11 @@ const Experience = () => {
                                         {exp.role}
                                     </h4>
                                     <p className="text-slate-400 font-medium mb-2">{exp.company}</p>
-                                    <p className="text-slate-400 text-sm leading-relaxed">
-                                        {exp.description}
-                                    </p>
+                                    <ul className="text-slate-400 text-sm leading-relaxed space-y-1.5 list-disc list-inside">
+                                        {exp.description.map((bullet, i) => (
+                                            <li key={i} className="text-slate-400">{bullet}</li>
+                                        ))}
+                                    </ul>
                                 </motion.div>
                             ))}
                         </div>

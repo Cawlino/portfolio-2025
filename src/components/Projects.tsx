@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Sparkles, Server, Database, Brain, Smartphone, Gamepad2, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, Sparkles, Server, Database, Brain, Smartphone, Gamepad2, Layers, ChevronLeft, ChevronRight, BarChart3, TrendingUp } from 'lucide-react';
 
 interface PhoneMockupProps {
     src?: string;
@@ -372,6 +372,101 @@ const Projects = () => {
                                     alt="Adventista Play App"
                                     label="Adventista Play"
                                 />
+                            </motion.div>
+                        </div>
+                    </motion.div>
+
+                    {/* Featured Project 4 - CometChart (Dashboard Financeiro) */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="group relative rounded-2xl bg-slate-900/50 backdrop-blur-md border border-white/10 overflow-hidden hover:border-violet-500/50 transition-colors"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                        <div className="grid md:grid-cols-2 gap-8 p-6 md:p-12 items-center">
+                            <div className="space-y-6">
+                                <div className="flex items-center gap-2 text-indigo-400 font-medium">
+                                    <BarChart3 className="w-4 h-4" />
+                                    <span>Dashboard Financeiro (React 19)</span>
+                                </div>
+
+                                <h3 className="text-2xl md:text-3xl font-bold text-white">CometChart</h3>
+
+                                <p className="text-slate-400 leading-relaxed">
+                                    Painel financeiro interativo para monitoramento de métricas (KPIs) desenvolvido com **React 19**, **TanStack Start/Router** e **Tailwind CSS**. Consumo eficiente de API REST em Node.js/Express, apoiada em banco de dados **PostgreSQL** com **Drizzle ORM** via **Docker**.
+                                </p>
+
+                                <div className="flex flex-wrap gap-2">
+                                    {['React 19', 'TanStack Router', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Drizzle ORM', 'Docker'].map((tag) => (
+                                        <span key={tag} className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-700">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4 py-4">
+                                    <div className="flex items-center gap-2 text-slate-300">
+                                        <TrendingUp className="w-4 h-4 text-emerald-500" />
+                                        <span className="text-sm">Métricas & KPIs em Tempo Real</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-slate-300">
+                                        <Database className="w-4 h-4 text-indigo-500" />
+                                        <span className="text-sm">Drizzle ORM & PostgreSQL</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-slate-300">
+                                        <Server className="w-4 h-4 text-violet-500" />
+                                        <span className="text-sm">Arquitetura Dockerizada</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Responsive Browser Mockup Right */}
+                            <motion.div 
+                                className="relative md:h-full flex items-center justify-center p-2 md:p-4"
+                                whileHover={{ scale: 1.02, rotateX: 2, rotateY: -2 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                style={{ perspective: 1000 }}
+                            >
+                                <div className="relative w-full aspect-video bg-slate-900 rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-indigo-500/10 group-hover:border-indigo-500/30 transition-colors flex flex-col">
+                                    <div className="h-8 bg-slate-800/80 backdrop-blur-md flex items-center px-4 gap-1.5 border-b border-white/5 z-10 shrink-0">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                                        <div className="mx-auto flex items-center gap-1.5 px-3 py-1 bg-slate-900/50 rounded-md border border-white/5">
+                                            <div className="w-2 h-2 rounded-full bg-emerald-500/50" />
+                                            <span className="text-[10px] text-slate-400 font-mono tracking-wider">cometchart.app</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex-1 bg-slate-950 p-6 flex flex-col justify-between overflow-hidden relative">
+                                        {/* Decorative dashboard visual elements */}
+                                        <div className="grid grid-cols-3 gap-3 mb-4 z-10">
+                                            <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                                                <div className="text-[10px] text-slate-400 font-mono">Receita Total</div>
+                                                <div className="text-sm font-bold text-emerald-400 mt-1">+ R$ 124.500</div>
+                                            </div>
+                                            <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                                                <div className="text-[10px] text-slate-400 font-mono">Crescimento (KPI)</div>
+                                                <div className="text-sm font-bold text-indigo-400 mt-1">28.4% ↗</div>
+                                            </div>
+                                            <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+                                                <div className="text-[10px] text-slate-400 font-mono">Transações</div>
+                                                <div className="text-sm font-bold text-violet-400 mt-1">1.482</div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex-1 bg-slate-900/40 rounded-lg border border-slate-800/80 p-4 flex items-end gap-2 justify-between z-10">
+                                            {[40, 65, 45, 80, 55, 90, 75, 100, 85, 95].map((h, i) => (
+                                                <div key={i} className="w-full bg-gradient-to-t from-indigo-600/40 to-emerald-500/80 rounded-t transition-all duration-500 hover:brightness-125" style={{ height: `${h}%` }} />
+                                            ))}
+                                        </div>
+
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent opacity-30 pointer-events-none" />
+                                    </div>
+                                </div>
                             </motion.div>
                         </div>
                     </motion.div>
