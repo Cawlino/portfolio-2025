@@ -270,7 +270,7 @@ const Projects = () => {
                                 <h3 className="text-2xl md:text-3xl font-bold text-white">PaceX Mobile</h3>
 
                                 <p className="text-slate-400 leading-relaxed">
-                                    Aplicativo nativo do ecossistema PaceX AI, desenvolvido em **React Native**. Oferece experiência de treino fluida na palma da mão com cálculos de carga em tempo real, sincronização com a nuvem e prescrições inteligentes com IA.
+                                    Aplicativo nativo do ecossistema PaceX AI, desenvolvido em React Native. Oferece experiência de treino fluida na palma da mão com cálculos de carga em tempo real, sincronização com a nuvem e prescrições inteligentes com IA.
                                 </p>
 
                                 <div className="flex flex-wrap gap-2">
@@ -326,7 +326,7 @@ const Projects = () => {
                                 <h3 className="text-2xl md:text-3xl font-bold text-white">Adventista Play</h3>
 
                                 <p className="text-slate-400 leading-relaxed">
-                                    Plataforma gamificada mobile para estudo bíblico e lições da Escola Sabatina. Inspirada no Duolingo, construída totalmente em **React Native**, oferecendo lições interativas, sistema de ofensivas (streaks) e quizzes gerados por Inteligência Artificial.
+                                    Plataforma gamificada mobile para estudo bíblico e lições da Escola Sabatina. Inspirada no Duolingo, construída totalmente em React Native, oferecendo lições interativas, sistema de ofensivas (streaks) e quizzes gerados por Inteligência Artificial.
                                 </p>
 
                                 <div className="flex flex-wrap gap-2">
@@ -396,7 +396,7 @@ const Projects = () => {
                                 <h3 className="text-2xl md:text-3xl font-bold text-white">CometChart</h3>
 
                                 <p className="text-slate-400 leading-relaxed">
-                                    Painel financeiro interativo para monitoramento de métricas (KPIs) desenvolvido com **React 19**, **TanStack Start/Router** e **Tailwind CSS**. Consumo eficiente de API REST em Node.js/Express, apoiada em banco de dados **PostgreSQL** com **Drizzle ORM** via **Docker**.
+                                    Painel financeiro interativo para monitoramento de métricas (KPIs) desenvolvido com React 19, TanStack Start/Router e Tailwind CSS. Consumo eficiente de API REST em Node.js/Express, apoiada em banco de dados PostgreSQL com Drizzle ORM via Docker.
                                 </p>
 
                                 <div className="flex flex-wrap gap-2">
