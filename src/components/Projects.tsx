@@ -1,43 +1,126 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Sparkles, Server, Database, Brain, Smartphone, Gamepad2, Layers } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, Sparkles, Server, Database, Brain, Smartphone, Gamepad2, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PhoneMockupProps {
     src?: string;
+    images?: string[];
+    folder?: string;
     alt: string;
     label: string;
 }
 
-// Sleek Samsung S24 Screen Mockup Frame (~19.5:9 aspect ratio)
-const PhoneMockup = ({ src, alt, label }: PhoneMockupProps) => (
-    <div className="relative mx-auto w-[240px] md:w-[270px] aspect-[9/19.5] bg-slate-950 rounded-[44px] border-[7px] border-slate-800 shadow-2xl shadow-violet-500/15 overflow-hidden group-hover:border-slate-700 transition-all flex flex-col">
-        {/* Camera Punch Hole */}
-        <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-black rounded-full z-30 ring-1 ring-white/15" />
-        
-        {/* Top Speaker Grill */}
-        <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-10 h-1 bg-slate-800 rounded-full z-30" />
+const pacexMobileImages = [
+    'Screenshot_20260626_172431_pacex-mobile-temp.jpg',
+    'Screenshot_20260626_172437_pacex-mobile-temp.jpg',
+    'Screenshot_20260626_172443_pacex-mobile-temp.jpg',
+    'Screenshot_20260626_172452_pacex-mobile-temp.jpg',
+    'Screenshot_20260626_172506_pacex-mobile-temp.jpg',
+    'Screenshot_20260626_172522_pacex-mobile-temp.jpg',
+];
 
-        {/* Screen Content */}
-        <div className="relative w-full h-full bg-slate-900 flex items-center justify-center overflow-hidden pt-6">
-            {src ? (
-                <img src={src} alt={alt} className="w-full h-full object-cover" />
-            ) : (
-                <div className="text-center p-6 space-y-3 z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mx-auto text-violet-400">
-                        <Smartphone className="w-7 h-7 animate-pulse" />
+const advPlayImages = [
+    'Screenshot_20260626_172322_Chrome.jpg',
+    'Screenshot_20260626_172330_Chrome.jpg',
+    'Screenshot_20260626_172353_Chrome.jpg',
+    'Screenshot_20260626_172356_Chrome.jpg',
+    'Screenshot_20260626_172409_Chrome.jpg',
+];
+
+// Sleek Mobile Screen Mockup Frame (~19.5:9 aspect ratio) with Interactive Carousel
+const PhoneMockup = ({ src, images, folder, alt, label }: PhoneMockupProps) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const prevSlide = () => {
+        if (!images) return;
+        setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    };
+
+    const nextSlide = () => {
+        if (!images) return;
+        setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    };
+
+    const currentImageSrc = images && folder
+        ? `${import.meta.env.BASE_URL}PrintsApps/${folder}/${images[currentIndex]}`
+        : src;
+
+    return (
+        <div className="relative mx-auto w-[240px] md:w-[270px] aspect-[9/19.5] bg-slate-950 rounded-[44px] border-[7px] border-slate-800 shadow-2xl shadow-violet-500/15 overflow-hidden group-hover:border-slate-700 transition-all flex flex-col select-none">
+            {/* Camera Punch Hole */}
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-black rounded-full z-30 ring-1 ring-white/15" />
+            
+            {/* Top Speaker Grill */}
+            <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-10 h-1 bg-slate-800 rounded-full z-30" />
+
+            {/* Screen Content */}
+            <div className="relative w-full h-full bg-slate-900 flex items-center justify-center overflow-hidden">
+                {currentImageSrc ? (
+                    <AnimatePresence mode="wait">
+                        <motion.img 
+                            key={currentIndex}
+                            src={currentImageSrc} 
+                            alt={`${alt} - Tela ${currentIndex + 1}`} 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="w-full h-full object-cover" 
+                        />
+                    </AnimatePresence>
+                ) : (
+                    <div className="text-center p-6 space-y-3 z-10">
+                        <div className="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mx-auto text-violet-400">
+                            <Smartphone className="w-7 h-7 animate-pulse" />
+                        </div>
+                        <div>
+                            <p className="text-xs font-semibold text-slate-200">{label}</p>
+                        </div>
+                        <span className="inline-block px-3 py-1 bg-slate-800/90 text-violet-300 rounded-full text-[10px] border border-slate-700 font-mono">
+                            Preview App
+                        </span>
                     </div>
-                    <div>
-                        <p className="text-xs font-semibold text-slate-200">{label}</p>
+                )}
+
+                {/* Glass reflection overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none z-20" />
+
+                {/* Carousel Controls (Only show if multiple images) */}
+                {images && images.length > 1 && (
+                    <div className="absolute inset-x-0 bottom-4 px-3 flex justify-between items-center z-30 opacity-90 hover:opacity-100 transition-opacity">
+                        <button 
+                            onClick={(e) => { e.preventDefault(); prevSlide(); }}
+                            className="w-7 h-7 rounded-full bg-slate-950/80 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-violet-600 transition-colors shadow-lg"
+                            aria-label="Anterior"
+                        >
+                            <ChevronLeft className="w-4 h-4" />
+                        </button>
+
+                        {/* Dots indicator */}
+                        <div className="flex gap-1 px-2 py-1 bg-slate-950/80 backdrop-blur rounded-full border border-white/10 max-w-[120px] overflow-hidden justify-center">
+                            {images.map((_, idx) => (
+                                <button 
+                                    key={idx}
+                                    onClick={(e) => { e.preventDefault(); setCurrentIndex(idx); }}
+                                    className={`h-1.5 rounded-full transition-all ${idx === currentIndex ? 'bg-violet-400 w-3' : 'bg-slate-600 w-1.5'}`}
+                                    aria-label={`Slide ${idx + 1}`}
+                                />
+                            ))}
+                        </div>
+
+                        <button 
+                            onClick={(e) => { e.preventDefault(); nextSlide(); }}
+                            className="w-7 h-7 rounded-full bg-slate-950/80 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-violet-600 transition-colors shadow-lg"
+                            aria-label="Próximo"
+                        >
+                            <ChevronRight className="w-4 h-4" />
+                        </button>
                     </div>
-                    <span className="inline-block px-3 py-1 bg-slate-800/90 text-violet-300 rounded-full text-[10px] border border-slate-700 font-mono">
-                        Pronto para o print...
-                    </span>
-                </div>
-            )}
-            {/* Glass reflection overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none z-20" />
+                )}
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 const Projects = () => {
     return (
@@ -175,8 +258,9 @@ const Projects = () => {
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                             >
                                 <PhoneMockup 
-                                    src={`${import.meta.env.BASE_URL}pacex_mobile_view.png`}
-                                    alt="PaceX Mobile App na tela do Samsung S24"
+                                    images={pacexMobileImages}
+                                    folder="PaceXmobile"
+                                    alt="PaceX Mobile App"
                                     label="PaceX Mobile"
                                 />
                             </motion.div>
@@ -291,7 +375,9 @@ const Projects = () => {
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                             >
                                 <PhoneMockup 
-                                    alt="Adventista Play App na tela do Samsung S24"
+                                    images={advPlayImages}
+                                    folder="ADVplay"
+                                    alt="Adventista Play App"
                                     label="Adventista Play"
                                 />
                             </motion.div>
