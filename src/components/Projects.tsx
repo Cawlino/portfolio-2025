@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Sparkles, Server, Database, Brain, Smartphone, Gamepad2, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, Sparkles, Server, Database, Brain, Smartphone, Gamepad2, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PhoneMockupProps {
     src?: string;
@@ -191,10 +191,6 @@ const Projects = () => {
                                         <ExternalLink className="w-4 h-4" />
                                         Ver site
                                     </a>
-                                    <a href="https://github.com/Cawlino" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors font-medium border border-slate-700">
-                                        <Github className="w-4 h-4" />
-                                        Code
-                                    </a>
                                 </div>
                             </div>
 
@@ -304,10 +300,6 @@ const Projects = () => {
                                     <a href="https://pacexai.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition-colors font-medium">
                                         <ExternalLink className="w-4 h-4" />
                                         Saiba mais
-                                    </a>
-                                    <a href="https://github.com/Cawlino" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors font-medium border border-slate-700">
-                                        <Github className="w-4 h-4" />
-                                        Code
                                     </a>
                                 </div>
                             </div>
