@@ -516,89 +516,30 @@ const Projects = () => {
                                         <span className="text-sm">Métricas em Tempo Real</span>
                                     </div>
                                 </div>
+
+                                <div className="flex gap-4 pt-2 relative z-20">
+                                    <a href="https://painel-de-vagas-frontend.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors font-medium">
+                                        <ExternalLink className="w-4 h-4" />
+                                        Acessar Painel
+                                    </a>
+                                </div>
                             </div>
 
-                            {/* Responsive Browser Mockup Right */}
+                            {/* Full Image Mockup Right */}
                             <motion.div 
                                 className="relative md:h-full flex items-center justify-center p-2 md:p-4"
-                                whileHover={{ scale: 1.02, rotateX: 2, rotateY: -2 }}
+                                whileHover={{ scale: 1.02 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                style={{ perspective: 1000 }}
                             >
-                                <div className="relative w-full aspect-video bg-[#0f111a] rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10 group-hover:border-blue-500/30 transition-colors flex flex-col">
-                                    <div className="h-8 bg-[#1a1d27]/80 backdrop-blur-md flex items-center px-4 gap-1.5 border-b border-white/5 z-10 shrink-0">
-                                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                                        <div className="mx-auto flex items-center gap-1.5 px-3 py-1 bg-black/30 rounded-md border border-white/5">
-                                            <div className="w-2 h-2 rounded-full bg-blue-500/50" />
-                                            <span className="text-[10px] text-slate-400 font-mono tracking-wider">painel-vagas.app</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex-1 p-3 sm:p-5 flex flex-col overflow-hidden relative z-10 gap-3">
-                                        {/* Header */}
-                                        <div className="flex flex-col gap-1">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-4 h-4 rounded bg-blue-600/20 flex items-center justify-center border border-blue-500/30">
-                                                    <div className="w-2 h-2 bg-blue-500 rounded-sm"></div>
-                                                </div>
-                                                <div className="text-sm font-bold text-slate-200">Painel de Vagas</div>
-                                            </div>
-                                            <div className="text-[8px] text-slate-500">Acompanhe suas candidaturas automatizadas pelo Gemini Spark.</div>
-                                        </div>
-
-                                        {/* Stats Cards */}
-                                        <div className="grid grid-cols-3 gap-2">
-                                            <div className="p-2.5 bg-[#141620] rounded-xl border border-white/5 flex flex-col gap-2 relative overflow-hidden">
-                                                <div className="text-[9px] text-slate-400 z-10">Total Registrado</div>
-                                                <div className="text-lg font-bold text-white z-10">12</div>
-                                                <div className="absolute right-[-10px] bottom-[-10px] opacity-10 text-blue-500">
-                                                    <BarChart3 className="w-12 h-12" />
-                                                </div>
-                                            </div>
-                                            <div className="p-2.5 bg-[#141620] rounded-xl border border-white/5 flex flex-col gap-2 relative overflow-hidden">
-                                                <div className="text-[9px] text-slate-400 z-10">Processos Ativos</div>
-                                                <div className="text-lg font-bold text-white z-10">9</div>
-                                                <div className="absolute right-[-10px] bottom-[-10px] opacity-10 text-emerald-500">
-                                                    <BarChart3 className="w-12 h-12" />
-                                                </div>
-                                            </div>
-                                            <div className="p-2.5 bg-[#141620] rounded-xl border border-white/5 flex flex-col gap-2 relative overflow-hidden">
-                                                <div className="text-[9px] text-slate-400 z-10">Última Sincronização</div>
-                                                <div className="text-[11px] font-bold text-white mt-1 z-10">Hoje, 20:18</div>
-                                                <div className="absolute right-[-10px] bottom-[-10px] opacity-10 text-purple-500">
-                                                    <BarChart3 className="w-12 h-12" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Table Mockup */}
-                                        <div className="flex-1 bg-[#141620] rounded-xl border border-white/5 overflow-hidden flex flex-col mt-1">
-                                            <div className="grid grid-cols-4 gap-2 px-3 py-2 border-b border-white/5 bg-white/[0.02]">
-                                                <div className="text-[7px] font-semibold text-slate-500">EMPRESA</div>
-                                                <div className="text-[7px] font-semibold text-slate-500 col-span-2">VAGA</div>
-                                                <div className="text-[7px] font-semibold text-slate-500 text-right">STATUS</div>
-                                            </div>
-                                            <div className="flex flex-col p-1.5 gap-1">
-                                                <div className="grid grid-cols-4 gap-2 px-2 py-1.5 items-center rounded bg-white/[0.02] hover:bg-white/[0.04] transition-colors cursor-default border border-transparent hover:border-white/5">
-                                                    <div className="text-[8px] font-medium text-slate-300 truncate">Empresa Confidencial</div>
-                                                    <div className="text-[8px] text-slate-400 col-span-2 truncate">Assistente Administrativo</div>
-                                                    <div className="flex justify-end"><span className="text-[6px] px-1.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">Alerta de Vaga</span></div>
-                                                </div>
-                                                <div className="grid grid-cols-4 gap-2 px-2 py-1.5 items-center rounded bg-white/[0.02] hover:bg-white/[0.04] transition-colors cursor-default border border-transparent hover:border-white/5">
-                                                    <div className="text-[8px] font-medium text-slate-300 truncate">Grupo TecnoSpeed</div>
-                                                    <div className="text-[8px] text-slate-400 col-span-2 truncate">Desenvolvedor(a) Júnior</div>
-                                                    <div className="flex justify-end"><span className="text-[6px] px-1.5 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">Fit Cultural</span></div>
-                                                </div>
-                                                <div className="grid grid-cols-4 gap-2 px-2 py-1.5 items-center rounded bg-white/[0.02] hover:bg-white/[0.04] transition-colors cursor-default border border-transparent hover:border-white/5">
-                                                    <div className="text-[8px] font-medium text-slate-300 truncate">Bydrec</div>
-                                                    <div className="text-[8px] text-slate-400 col-span-2 truncate">Full Stack Python</div>
-                                                    <div className="flex justify-end"><span className="text-[6px] px-1.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">Confirmada</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10 group-hover:border-blue-500/30 transition-colors bg-slate-900">
+                                    <img 
+                                        src={`${import.meta.env.BASE_URL}PrintsApps/PainelVagas/screenshot.png`} 
+                                        alt="Screenshot do Painel de Vagas" 
+                                        className="w-full h-full object-cover border border-white/5" 
+                                        onError={(e) => {
+                                            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x450/141620/3b82f6?text=Salve+o+print+como+screenshot.png+em+PrintsApps/PainelVagas';
+                                        }}
+                                    />
                                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-transparent to-transparent opacity-50 pointer-events-none" />
                                 </div>
                             </motion.div>
