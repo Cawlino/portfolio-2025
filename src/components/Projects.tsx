@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Sparkles, Server, Database, Brain, Smartphone, Gamepad2, Layers, ChevronLeft, ChevronRight, BarChart3, TrendingUp } from 'lucide-react';
+import { ExternalLink, Sparkles, Server, Database, Brain, Smartphone, Gamepad2, Layers, ChevronLeft, ChevronRight, BarChart3, TrendingUp, Globe } from 'lucide-react';
 
 interface PhoneMockupProps {
     src?: string;
@@ -471,7 +471,7 @@ const Projects = () => {
                         </div>
                     </motion.div>
 
-                    {/* Featured Project 5 - Painel de Vagas (Dashboard de Candidaturas) */}
+                    {/* Featured Project 5 - Painel de Vagas (Hub de Vagas & Scraping) */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -484,18 +484,18 @@ const Projects = () => {
                         <div className="grid md:grid-cols-2 gap-8 p-6 md:p-12 items-center">
                             <div className="space-y-6">
                                 <div className="flex items-center gap-2 text-blue-400 font-medium">
-                                    <BarChart3 className="w-4 h-4" />
-                                    <span>Dashboard Automático & IA</span>
+                                    <Globe className="w-4 h-4" />
+                                    <span>Web Scraping & Match Inteligente</span>
                                 </div>
 
                                 <h3 className="text-2xl md:text-3xl font-bold text-white">Painel de Vagas</h3>
 
                                 <p className="text-slate-400 leading-relaxed">
-                                    Sistema desenvolvido para o monitoramento e gestão de candidaturas automatizadas pelo Gemini Spark. A aplicação consome dados em tempo real através de uma API customizada em Google Apps Script, utilizando o Google Sheets como banco de dados.
+                                    Hub inteligente de monitoramento e agregação de vagas de tecnologia. O sistema executa web scrapers serverless no LinkedIn e na Catho, aplicando um algoritmo de compatibilidade que analisa requisitos técnicos e calcula a pontuação de match com o perfil do desenvolvedor. Conta com segmentação geográfica (Maringá e Região vs. Vagas Remotas), filtros por plataforma e busca em tempo real.
                                 </p>
 
                                 <div className="flex flex-wrap gap-2">
-                                    {['React 19', 'Tailwind CSS 4', 'Google Apps Script', 'Google Sheets', 'Gemini AI', 'Vite'].map((tag) => (
+                                    {['React 19', 'Tailwind CSS 4', 'Vercel Serverless', 'Web Scraping', 'Cheerio', 'Node.js', 'Vite'].map((tag) => (
                                         <span key={tag} className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-700">
                                             {tag}
                                         </span>
@@ -505,15 +505,19 @@ const Projects = () => {
                                 <div className="grid grid-cols-2 gap-4 py-4">
                                     <div className="flex items-center gap-2 text-slate-300">
                                         <Sparkles className="w-4 h-4 text-blue-500" />
-                                        <span className="text-sm">Integração com Gemini</span>
+                                        <span className="text-sm">Score de Match Inteligente</span>
                                     </div>
                                     <div className="flex items-center gap-2 text-slate-300">
-                                        <Database className="w-4 h-4 text-emerald-500" />
-                                        <span className="text-sm">Sheets API Customizada</span>
+                                        <Globe className="w-4 h-4 text-emerald-500" />
+                                        <span className="text-sm">Scrapers LinkedIn & Catho</span>
                                     </div>
                                     <div className="flex items-center gap-2 text-slate-300">
                                         <BarChart3 className="w-4 h-4 text-indigo-500" />
-                                        <span className="text-sm">Métricas em Tempo Real</span>
+                                        <span className="text-sm">Maringá & Vagas Remotas</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-slate-300">
+                                        <Server className="w-4 h-4 text-violet-500" />
+                                        <span className="text-sm">API Serverless & Cache</span>
                                     </div>
                                 </div>
 
