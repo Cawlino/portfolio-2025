@@ -18,5 +18,5 @@ Projetos novos estão em `src/components/NewProjects.tsx`; formação e certific
 O checkout possui vínculo local com Vercel (`portfolio-2026`) e usa base `/`. `npm run deploy` gera a versão com base `/portfolio-2025/` e publica na branch `gh-pages`. A Vercel usa `npm run build`, com base `/`.
 
 - GitHub Pages: https://cawlino.github.io/portfolio-2025/
-- Vercel: https://portfolio-2026.vercel.app
+- Vercel: https://portfolio-2026-nine-ebon.vercel.app
 - Código: https://github.com/Cawlino/portfolio-2025
