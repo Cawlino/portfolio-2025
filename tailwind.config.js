@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
-      colors: {
+      colors: { accent: { 100:'#d4e9dd', 300:'#b4d3c0', 400:'#a3c9b1', 500:'#8db69c', 600:'#456c55', 900:'#203529' },
         // Custom aliases if needed, but standard palette is usually sufficient.
         // We can ensure we have access to all colors (Tailwind include them by default)
       },

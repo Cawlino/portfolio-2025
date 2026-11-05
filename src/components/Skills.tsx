@@ -55,10 +55,10 @@ const Skills = () => {
                     className="mb-16 md:text-center"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Technical <span className="text-violet-500">Expertise</span>
+                        Conhecimento <span className="text-accent-500">técnico</span>
                     </h2>
-                    <div className="h-1 w-20 bg-violet-500 rounded-full md:mx-auto" />
-                    <p className="text-slate-400 mt-6 max-w-2xl mx-auto">
+                    <div className="h-1 w-20 bg-accent-500 rounded-full md:mx-auto" />
+                    <p className="text-neutral-400 mt-6 max-w-2xl mx-auto">
                         Dominando o ecossistema moderno de desenvolvimento web com foco em performance, escalabilidade e inteligência artificial.
                     </p>
                 </motion.div>
@@ -74,9 +74,9 @@ const Skills = () => {
                         <motion.div
                             key={idx}
                             variants={itemVariants}
-                            className="bg-slate-900/50 backdrop-blur-sm border border-slate-800 p-6 rounded-xl hover:border-violet-500/30 transition-colors group"
+                            className="bg-neutral-900/50  border border-neutral-800 p-6 rounded-xl hover:border-accent-500/30 transition-colors group"
                         >
-                            <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-violet-500/20 group-hover:text-violet-400 transition-all text-slate-400">
+                            <div className="w-12 h-12 bg-neutral-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent-500/20 group-hover:text-accent-400 transition-all text-neutral-400">
                                 <category.icon className="w-6 h-6" />
                             </div>
 
@@ -86,7 +86,7 @@ const Skills = () => {
                                 {category.skills.map((skill) => (
                                     <span
                                         key={skill}
-                                        className="text-xs font-medium px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700/50"
+                                        className="text-xs font-medium px-2.5 py-1 rounded bg-neutral-800 text-neutral-300 border border-neutral-700/50"
                                     >
                                         {skill}
                                     </span>
