@@ -425,7 +425,7 @@ export const portfolioData: Record<Language, PortfolioContent> = {
           degree: 'Workshop WorkinTech 2024.2 (8 horas)',
           date: 'Out 2024',
           type: 'certification',
-          image: 'certificates/unicesumar.jpg',
+          image: 'certificates/unicesumar-workintech-2024.png',
           pdf: 'certificates/unicesumar-workintech-2024.pdf',
         },
         {
@@ -433,7 +433,7 @@ export const portfolioData: Record<Language, PortfolioContent> = {
           degree: 'Mostra de Profissões – ROTARY (20 horas)',
           date: 'Out 2023',
           type: 'certification',
-          image: 'certificates/unicesumar.jpg',
+          image: 'certificates/unicesumar-mostra-rotary-2023.png',
           pdf: 'certificates/unicesumar-mostra-rotary-2023.pdf',
         },
         {
@@ -441,7 +441,7 @@ export const portfolioData: Record<Language, PortfolioContent> = {
           degree: 'I Jornada de Empregabilidade – WorkinTech 2023.1 (20 horas)',
           date: 'Mai 2023',
           type: 'certification',
-          image: 'certificates/unicesumar.jpg',
+          image: 'certificates/unicesumar-workintech-2023.png',
           pdf: 'certificates/unicesumar-workintech-2023.pdf',
         },
       ],
@@ -932,7 +932,7 @@ export const portfolioData: Record<Language, PortfolioContent> = {
           degree: 'WorkinTech 2024.2 Technology Workshop (8 hours)',
           date: 'Oct 2024',
           type: 'certification',
-          image: 'certificates/unicesumar.jpg',
+          image: 'certificates/unicesumar-workintech-2024.png',
           pdf: 'certificates/unicesumar-workintech-2024.pdf',
         },
         {
@@ -940,7 +940,7 @@ export const portfolioData: Record<Language, PortfolioContent> = {
           degree: 'Professions Fair – ROTARY (20 hours)',
           date: 'Oct 2023',
           type: 'certification',
-          image: 'certificates/unicesumar.jpg',
+          image: 'certificates/unicesumar-mostra-rotary-2023.png',
           pdf: 'certificates/unicesumar-mostra-rotary-2023.pdf',
         },
         {
@@ -948,7 +948,7 @@ export const portfolioData: Record<Language, PortfolioContent> = {
           degree: '1st Employability Journey – WorkinTech 2023.1 (20 hours)',
           date: 'May 2023',
           type: 'certification',
-          image: 'certificates/unicesumar.jpg',
+          image: 'certificates/unicesumar-workintech-2023.png',
           pdf: 'certificates/unicesumar-workintech-2023.pdf',
         },
       ],
